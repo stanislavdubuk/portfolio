@@ -1,3 +1,10 @@
+:root {
+  --background-main: #1d1d1f;
+  --background-secondary: #39383d;
+
+  $tablet: '(max-width: 768px)';
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,7 +19,15 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: rgb(21, 27, 39);
+  background-color: var(--background-main);
+
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+    -webkit-appearance: none;
+  }
 }
 
 code {
