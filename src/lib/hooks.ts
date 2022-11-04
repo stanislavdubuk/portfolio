@@ -1,25 +1,32 @@
 import * as React from 'react';
 
-export const useIntersection = (
-  element: HTMLElement | null,
-  rootMargin: any
-) => {
-  const [isVisible, setIsVisible] = React.useState(false);
+export const useIntersection = <Element extends HTMLElement>(): [
+  boolean,
+  React.RefCallback<Element>
+] => {
+  const [intersecting, setIntersecting] = React.useState(false);
+  const observer = React.useMemo(
+    () =>
+      new IntersectionObserver(
+        ([entry]) => {
+          setIntersecting(entry.isIntersecting);
+        },
+        { rootMargin: '-200px' }
+      ),
+    [setIntersecting]
+  );
 
-  React.useEffect(() => {
-    if (!element) return;
+  const currentElement = React.useCallback(
+    (element: Element | null) => {
+      if (element) {
+        observer.observe(element);
+      } else {
+        observer.disconnect();
+        setIntersecting(false);
+      }
+    },
+    [observer, setIntersecting]
+  );
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
-      },
-      { rootMargin }
-    );
-
-    element && observer.observe(element);
-
-    return () => observer.unobserve(element);
-  }, []);
-
-  return isVisible;
+  return [intersecting, currentElement];
 };
