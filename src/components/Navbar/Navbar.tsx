@@ -1,25 +1,25 @@
 import * as React from 'react';
+import { ESections } from '../../lib/enums';
 
 import s from './Navbar.module.scss';
 
 interface NavbarProps {
-  activeTab: string;
+  activeSection: ESections;
 }
 
-export const Navbar = ({ activeTab }: NavbarProps) => {
+export const Navbar = ({ activeSection }: NavbarProps) => {
   const getStyles = () => {
-    if (activeTab === 'hero') return;
-    if (activeTab === 'projects')
+    if (activeSection === ESections.Projects)
       return { transform: 'translateX(calc(100% - 2px))' };
-    if (activeTab === 'about')
+    if (activeSection === ESections.About)
       return { transform: 'translateX(calc(200% - 4px))' };
   };
 
   return (
-    <div className={s.root}>
+    <nav className={s.root}>
       <div className={s.container}>
         <div className={s.item} style={getStyles()}></div>
       </div>
-    </div>
+    </nav>
   );
 };

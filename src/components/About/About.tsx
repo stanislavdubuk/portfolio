@@ -1,15 +1,21 @@
 import * as React from 'react';
 
+import { Container } from '../Container';
+
 import s from './About.module.scss';
 
 interface AboutProps {
-  reference: any;
+  reference: (instance: HTMLElement | null) => void;
 }
 
 export const About = ({ reference }: AboutProps) => {
   return (
-    <div className={s.root} ref={reference}>
-      <h1>ABOUT</h1>
-    </div>
+    <section className={s.root} ref={reference}>
+      <Container>
+        <div className={s.content}>
+          <div className={s.about}></div>
+        </div>
+      </Container>
+    </section>
   );
 };
