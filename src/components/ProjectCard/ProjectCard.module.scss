@@ -1,7 +1,66 @@
-.root {
-  flex: 1 0 600px;
+:root {
+  --card-color: rgb(23, 23, 23);
+}
 
-  border-radius: 30px;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 10px;
-  background-color: rgba(255, 255, 255, 0.3);
+.root {
+  position: relative;
+
+  width: 600px;
+  height: 350px;
+
+  border-radius: 10px;
+
+  background-color: rgba(255, 255, 255, 0.1);
+
+  cursor: pointer;
+
+  &::before,
+  .border {
+    opacity: 0;
+    transition: opacity 500ms;
+    border-radius: inherit;
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  &::before {
+    background: radial-gradient(
+      800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.06),
+      transparent 40%
+    );
+
+    z-index: 3;
+  }
+
+  .border {
+    background: radial-gradient(
+      400px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.3),
+      transparent 40%
+    );
+
+    z-index: 1;
+  }
+
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.content {
+  height: calc(100% - 2px);
+  width: calc(100% - 2px);
+  background-color: var(--background-secondary);
+  border-radius: 10px;
+  margin: 1px;
+  z-index: 2;
+  position: relative;
 }

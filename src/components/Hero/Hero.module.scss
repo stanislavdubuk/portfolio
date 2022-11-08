@@ -4,6 +4,9 @@
 
   color: white;
   z-index: 1;
+  position: relative;
+
+  background-color: white;
 }
 
 .content {
@@ -31,4 +34,24 @@
 
 .personal {
   flex-grow: 1;
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(300% + 1.3px);
+  height: 144px;
+}
+
+.wave .shape {
+  fill: var(--background-secondary);
 }

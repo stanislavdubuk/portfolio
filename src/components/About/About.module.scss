@@ -1,6 +1,10 @@
 .root {
   height: 100%;
   width: 100vw;
+
+  position: relative;
+
+  background-color: white;
 }
 
 .content {
@@ -20,4 +24,24 @@
 
   height: 100%;
   width: 100%;
+}
+
+.wave {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave svg {
+  position: relative;
+  display: block;
+  width: calc(190% + 1.3px);
+  height: 63px;
+}
+
+.wave .shape {
+  fill: var(--background-secondary);
 }

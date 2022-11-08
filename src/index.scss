@@ -1,8 +1,6 @@
 :root {
-  --background-main: #20232a;
-  // --background-main: #1d1d1f;
-  // --background-main: rgb(233, 232, 232);
-  --background-secondary: #39383d;
+  --background-secondary: #131315;
+
   --blue-main: #00d8ff;
 
   $tablet: '(max-width: 768px)';
@@ -22,7 +20,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: var(--background-main);
+  background-color: var(--background-secondary);
 
   -ms-overflow-style: none;
   scrollbar-width: none;
