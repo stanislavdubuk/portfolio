@@ -1,13 +1,14 @@
 import * as React from 'react';
+
 import { ESections } from '../../lib/enums';
 
-import s from './Navbar.module.scss';
+import s from './Indicator.module.scss';
 
-interface NavbarProps {
+interface IndicatorProps {
   activeSection: ESections;
 }
 
-export const Navbar = ({ activeSection }: NavbarProps) => {
+export const Indicator = ({ activeSection }: IndicatorProps) => {
   const getStyles = () => {
     if (activeSection === ESections.Projects)
       return { transform: 'translateX(calc(100% - 2px))' };
@@ -16,10 +17,10 @@ export const Navbar = ({ activeSection }: NavbarProps) => {
   };
 
   return (
-    <nav className={s.root}>
+    <div className={s.root}>
       <div className={s.container}>
         <div className={s.item} style={getStyles()}></div>
       </div>
-    </nav>
+    </div>
   );
 };

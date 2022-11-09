@@ -1,0 +1,80 @@
+.root {
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+
+  width: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  -webkit-box-align: center;
+  align-items: center;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 90px;
+    margin: 0px auto;
+    background-color: var(--light-slate);
+  }
+}
+
+.left {
+  left: 50px;
+}
+
+.right {
+  right: 50px;
+}
+
+.icon {
+  fill: var(--slate);
+  color: var(--slate);
+
+  margin-bottom: 18px;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.link {
+  &:hover {
+    fill: var(--blue-main);
+    transform: translateY(-6px);
+  }
+}
+
+.email {
+  margin-bottom: 18px;
+  margin-left: 2px;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    color: var(--blue-main);
+    transform: translateY(-6px);
+  }
+}
+
+.clipboard {
+  margin-bottom: 18px;
+
+  opacity: 0;
+
+  transition: all 0.3s ease-in;
+  color: var(--blue-main);
+}
+
+.copied {
+  opacity: 1;
+  transform: translateY(-6px);
+}

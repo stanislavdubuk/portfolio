@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Container } from '../Container';
-import { ProjectCard } from '../ProjectCard';
+
+import { Card } from '../../components/ProjectCard';
 
 import s from './Projects.module.scss';
 
@@ -39,19 +39,17 @@ export const Projects = ({ reference }: ProjectsProps) => {
 
   return (
     <section className={s.root} ref={reference}>
-      <Container>
-        <div className={s.content}>
-          <div
-            className={s.cardContainer}
-            ref={cardContainerRef}
-            onMouseMove={(event) => handleMouseMove(event)}
-          >
-            {items.map((card) => (
-              <ProjectCard key={card.card} reference={card.ref} />
-            ))}
-          </div>
+      <div className={s.content}>
+        <div
+          className={s.cardContainer}
+          ref={cardContainerRef}
+          onMouseMove={(event) => handleMouseMove(event)}
+        >
+          {items.map((card) => (
+            <Card key={card.card} reference={card.ref} />
+          ))}
         </div>
-      </Container>
+      </div>
     </section>
   );
 };

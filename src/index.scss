@@ -1,7 +1,13 @@
 :root {
-  --background-secondary: #131315;
-
+  --background-main: #131315;
+  --background-main-transparent: rgba(19, 19, 21, 0.9);
+  --dark-slate: #495670;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
   --blue-main: #00d8ff;
+  --blue-main-transparent: rgba(0, 216, 255, 0.1);
 
   $tablet: '(max-width: 768px)';
 }
@@ -20,7 +26,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: var(--background-secondary);
+  background-color: var(--background-main);
 
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -29,9 +35,16 @@ body {
     display: none;
     -webkit-appearance: none;
   }
+
+  color: var(--light-slate);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+section {
+  max-width: 1000px;
+  margin: 0 auto;
 }

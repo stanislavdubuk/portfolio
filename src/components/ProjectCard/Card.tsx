@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import s from './ProjectCard.module.scss';
+import s from './Card.module.scss';
 
-interface ProjectCardProps {
+interface CardProps {
   reference: React.LegacyRef<HTMLDivElement>;
 }
 
-export const ProjectCard = ({ reference }: ProjectCardProps) => {
+export const Card = ({ reference }: CardProps) => {
   return (
     <div className={s.root} ref={reference}>
       <div className={s.border}></div>

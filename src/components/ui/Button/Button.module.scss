@@ -1,0 +1,35 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+
+  padding: 10px 20px;
+
+  border: 1px solid var(--blue-main);
+  border-radius: 6px;
+
+  color: var(--blue-main);
+
+  transition: all 0.3s ease-in-out;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--blue-main-transparent);
+  }
+}
+
+.size {
+  &_small {
+    height: 32px;
+  }
+  &_medium {
+    height: 50px;
+  }
+
+  &_large {
+    padding: 1.25rem 1.75rem;
+    font-size: 16px;
+  }
+}
