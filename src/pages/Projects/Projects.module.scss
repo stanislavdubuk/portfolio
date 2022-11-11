@@ -1,14 +1,39 @@
 .root {
-  width: 100%;
-
-  color: white;
+  scroll-margin-top: var(--nav-height);
 }
 
+.heading {
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--slate);
+
+  &::before {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 1px;
+    margin-right: 10px;
+    background-color: var(--dark-slate);
+  }
+  &::after {
+    content: '';
+    display: block;
+    width: 90px;
+    height: 1px;
+    margin-left: 6px;
+    background-color: var(--dark-slate);
+  }
+}
 .cardContainer {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
 
-  padding: 100px 0;
+  padding-top: 60px;
+  padding-bottom: 160px;
 }

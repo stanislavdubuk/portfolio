@@ -13,20 +13,28 @@
   padding: 0 50px;
 
   width: 100%;
-
-  height: 100px;
+  height: var(--nav-height);
 
   background-color: var(--background-main-transparent);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
 
-.left {
-  color: var(--blue-main);
+.icon {
+  fill: var(--blue-main);
+
+  cursor: pointer;
+
+  rect {
+    fill: none;
+
+    stroke: var(--blue-main);
+  }
 }
 
-.right {
+.navigation {
   display: flex;
+  margin-left: 50px;
 }
 
 .item {

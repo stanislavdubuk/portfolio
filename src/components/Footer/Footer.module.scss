@@ -1,0 +1,30 @@
+.root {
+  padding: 40px 0;
+
+  span {
+    font-size: 12px;
+  }
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  margin: 0 auto;
+}
+
+.icon {
+  margin: 10px 0;
+
+  fill: var(--blue-main);
+
+  cursor: pointer;
+
+  rect {
+    fill: none;
+
+    stroke: var(--blue-main);
+  }
+}

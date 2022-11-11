@@ -1,6 +1,7 @@
 import * as React from 'react';
 
-import { Card } from '../../components/ProjectCard';
+import { Card } from '../../components/Card';
+import { PROJECTS } from '../../lib/constants';
 
 import s from './Projects.module.scss';
 
@@ -11,10 +12,8 @@ interface ProjectsProps {
 export const Projects = ({ reference }: ProjectsProps) => {
   const cardContainerRef = React.useRef<HTMLDivElement | null>(null);
 
-  const cards = [1, 2, 3, 4];
-
-  const items = cards.map((card) => ({
-    card,
+  const projects = PROJECTS.map((project) => ({
+    project,
     ref: React.createRef() as React.LegacyRef<HTMLDivElement>,
   }));
 
@@ -38,15 +37,20 @@ export const Projects = ({ reference }: ProjectsProps) => {
   };
 
   return (
-    <section className={s.root} ref={reference}>
+    <section id='projects' className={s.root} ref={reference}>
+      <h1 className={s.heading}>01.</h1>
       <div className={s.content}>
         <div
           className={s.cardContainer}
           ref={cardContainerRef}
           onMouseMove={(event) => handleMouseMove(event)}
         >
-          {items.map((card) => (
-            <Card key={card.card} reference={card.ref} />
+          {projects.map((project) => (
+            <Card
+              key={project.project.id}
+              project={project.project}
+              reference={project.ref}
+            />
           ))}
         </div>
       </div>

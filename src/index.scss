@@ -1,6 +1,8 @@
 :root {
-  --background-main: #131315;
-  --background-main-transparent: rgba(19, 19, 21, 0.9);
+  // Colors
+
+  --background-main: rgb(26, 26, 26);
+  --background-main-transparent: rgba(26, 26, 26, 0.9);
   --dark-slate: #495670;
   --slate: #8892b0;
   --light-slate: #a8b2d1;
@@ -8,6 +10,12 @@
   --white: #e6f1ff;
   --blue-main: #00d8ff;
   --blue-main-transparent: rgba(0, 216, 255, 0.1);
+
+  // Sizes
+
+  --nav-height: 100px;
+
+  // Media
 
   $tablet: '(max-width: 768px)';
 }

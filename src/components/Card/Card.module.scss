@@ -1,7 +1,3 @@
-:root {
-  --card-color: rgb(23, 23, 23);
-}
-
 .root {
   position: relative;
 
@@ -10,6 +6,7 @@
 
   border-radius: 6px;
 
+  color: white;
   background-color: rgba(73, 86, 112, 0.3);
 
   cursor: pointer;
@@ -63,4 +60,63 @@
   margin: 1px;
   z-index: 2;
   position: relative;
+}
+
+.container {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 24px;
+
+  background: linear-gradient(
+    0deg,
+    rgba(19, 19, 21, 1) 50%,
+
+    rgba(255, 215, 130, 0) 100%
+  );
+
+  border-radius: inherit;
+}
+
+.image {
+  width: 100%;
+
+  border-radius: inherit;
+
+  opacity: 0.5;
+  filter: gray;
+  -webkit-filter: grayscale(1);
+  filter: grayscale(1);
+}
+
+.title {
+  font-size: 24px;
+}
+
+.description {
+  font-size: 18px;
+
+  color: var(--light-slate);
+
+  margin-top: 12px;
+
+  min-height: 44px;
+}
+
+.stack {
+  display: flex;
+
+  margin-top: 24px;
+}
+
+.tech {
+  margin-right: 10px;
+
+  color: var(--blue-main);
 }

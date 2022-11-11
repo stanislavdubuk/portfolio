@@ -31,28 +31,20 @@
 
 .content {
   width: 100%;
-  height: 100vh;
+  height: 50vh;
 
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
 
   padding: 120px 0;
 }
 
-.about {
-  width: 50%;
-
-  span {
-    display: block;
-    margin-bottom: 40px;
-
-    font-size: 20px;
-  }
-}
-
-.stack {
+.contact {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 4px 10px;
   border-radius: 30px;
 
-  width: 50%;
+  height: 100%;
+  width: 100%;
 }
