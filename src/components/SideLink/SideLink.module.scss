@@ -20,15 +20,30 @@
     height: 90px;
     margin: 0px auto;
     background-color: var(--light-slate);
+
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
 }
 
 .left {
   left: 50px;
+
+  @media (max-width: 767px) {
+    position: absolute;
+    left: unset;
+    right: 10px;
+    z-index: 4;
+  }
 }
 
 .right {
   right: 50px;
+
+  @media (max-width: 767px) {
+    display: none;
+  }
 }
 
 .icon {
@@ -41,6 +56,8 @@
 }
 
 .link {
+  cursor: pointer;
+
   &:hover {
     fill: var(--blue-main);
     transform: translateY(-6px);

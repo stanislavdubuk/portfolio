@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Svg } from '../../components/ui/Svg';
 
 import s from './About.module.scss';
 
@@ -26,7 +27,15 @@ export const About = ({ reference }: AboutProps) => {
             games and cars - get in touch!
           </span>
         </p>
-        <div className={s.stack}></div>
+        <h3 className={s.subHeading}>Stack</h3>
+        <div className={s.stack}>
+          <Svg className={s.icon} src='html' />
+          <Svg className={s.icon} src='css' />
+          <Svg className={s.icon} src='sass' />
+          <Svg className={s.icon} src='javascript' />
+          <Svg className={s.icon} src='typescript' />
+          <Svg className={s.icon} src='react' />
+        </div>
       </div>
     </section>
   );

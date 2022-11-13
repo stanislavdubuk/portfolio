@@ -50,3 +50,9 @@ export type TProject = {
   live: string;
   image: string;
 };
+
+export const DEFAULT_FORM_QUERY = {
+  name: '',
+  email: '',
+  message: '',
+};

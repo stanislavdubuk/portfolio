@@ -7,9 +7,14 @@ import { scroll } from '../../lib/utils';
 import { EButtonSizes, ESections } from '../../lib/enums';
 
 import s from './Header.module.scss';
+import { Navigation } from '../Navigation';
 
 export const Header = () => {
+  const [showMobileMenu, setShowMobileMenu] = React.useState(false);
+
   const handleScroll = (sectionId: ESections) => scroll(sectionId);
+
+  const handleToggleMenu = () => setShowMobileMenu(!showMobileMenu);
   return (
     <header className={s.root}>
       <nav className={s.nav}>
@@ -21,27 +26,14 @@ export const Header = () => {
           onClick={() => handleScroll(ESections.Hero)}
         />
 
-        <div className={s.navigation}>
-          <div
-            className={s.item}
-            onClick={() => handleScroll(ESections.Projects)}
-          >
-            <span className={s.number}>01.</span>
-            <span>Projects</span>
-          </div>
-          <div className={s.item} onClick={() => handleScroll(ESections.About)}>
-            <span className={s.number}>02.</span>
-            <span>About</span>
-          </div>
-          <div
-            className={s.item}
-            onClick={() => handleScroll(ESections.Contact)}
-          >
-            <span className={s.number}>03.</span>
-            <span>Contact</span>
-          </div>
+        <Navigation handleScroll={handleScroll} />
+
+        <Button className={s.resume} size={EButtonSizes.Medium}>
+          Resume
+        </Button>
+        <div className={s.burger} onClick={handleToggleMenu}>
+          <Svg className={s.icon} src='menu' width={40} height={40} />
         </div>
-        <Button size={EButtonSizes.Medium}>Resume</Button>
       </nav>
     </header>
   );

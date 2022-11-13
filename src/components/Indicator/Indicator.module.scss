@@ -15,11 +15,8 @@
 
   background-color: rgba(0, 0, 0, 0.3);
 
-  @media screen and (max-width: 830px) {
-    transform: rotate(90deg);
-    left: -147px;
-    bottom: unset;
-    top: 50%;
+  @media (max-width: 830px) {
+    display: none;
   }
 }
 

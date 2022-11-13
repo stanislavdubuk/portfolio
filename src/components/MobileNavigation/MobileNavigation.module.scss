@@ -1,0 +1,19 @@
+.root {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 100vh;
+
+  background: blue;
+
+  z-index: 6;
+
+  display: none;
+
+  //   @media (max-width: 830px) {
+  //     display: block;
+  //   }
+}
