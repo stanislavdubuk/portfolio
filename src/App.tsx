@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { Hero } from './pages/Hero';
-import { About } from './pages/About';
-import { Projects } from './pages/Projects';
-import { Contact } from './pages/Contact';
+import { Hero } from './sections/Hero';
+import { About } from './sections/About';
+import { Projects } from './sections/Projects';
+import { Contact } from './sections/Contact';
 
 import { Layout } from './components/ui/Layout';
 import { Container } from './components/ui/Container';
