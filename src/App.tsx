@@ -10,7 +10,6 @@ import { Container } from './components/ui/Container';
 import { Header } from './components/Header';
 import { Indicator } from './components/Indicator';
 import { SideLink } from './components/SideLink';
-import { Footer } from './components/Footer';
 
 import { useIntersection } from './lib/hooks';
 
@@ -31,7 +30,6 @@ const App = () => {
         <About reference={aboutSection} />
         <Contact reference={contactSection} />
       </Container>
-      <Footer />
       <Indicator
         inViewportHero={inViewportHero}
         inViewportProjects={inViewportProjects}
