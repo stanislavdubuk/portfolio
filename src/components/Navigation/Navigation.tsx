@@ -1,7 +1,6 @@
 import * as React from 'react';
 
 import { ESections } from '../../lib/enums';
-import { MobileNavigation } from '../MobileNavigation';
 
 import s from './Navigation.module.scss';
 
@@ -29,7 +28,6 @@ export const Navigation = ({ handleScroll }: NavigationProps) => {
           <span>Contact</span>
         </div>
       </div>
-      <MobileNavigation />
     </React.Fragment>
   );
 };

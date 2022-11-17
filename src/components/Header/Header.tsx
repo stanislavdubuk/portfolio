@@ -8,6 +8,7 @@ import { EButtonSizes, ESections } from '../../lib/enums';
 
 import s from './Header.module.scss';
 import { Navigation } from '../Navigation';
+import { MobileNavigation } from '../MobileNavigation';
 
 export const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -35,6 +36,11 @@ export const Header = () => {
           <Svg className={s.icon} src='menu' width={40} height={40} />
         </div>
       </nav>
+      <MobileNavigation
+        showMobileNavigation={showMobileMenu}
+        setShowMobileMenu={setShowMobileMenu}
+        handleScroll={handleScroll}
+      />
     </header>
   );
 };

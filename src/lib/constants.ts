@@ -23,7 +23,7 @@ export const PROJECTS: TProject[] = [
     id: 3,
     title: 'Personal Portfolio',
     description: 'Second version of my personal portfolio',
-    stack: ['React', 'TS', 'Redux Toolkit'],
+    stack: ['React', 'TS', 'SASS'],
     link: 'https://github.com/stanislavdubuk/portfolio',
     live: '',
     image: 'portfolio',

@@ -61,6 +61,9 @@
 
 .links {
   display: flex;
+  justify-content: center;
+
+  max-width: 540px;
 
   @media (max-width: 830px) {
     display: initial;
