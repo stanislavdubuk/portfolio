@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { motion } from 'framer-motion';
 
 import { Card } from '../../components/Card';
-import { PROJECTS } from '../../lib/constants';
+import { PROJECTS, SECTION_DELAY } from '../../lib/constants';
 
 import s from './Projects.module.scss';
+import { handleMouseMove } from '../../lib/utils';
 
 interface ProjectsProps {
   reference: (instance: HTMLElement | null) => void;
@@ -17,33 +19,22 @@ export const Projects = ({ reference }: ProjectsProps) => {
     ref: React.createRef() as React.LegacyRef<HTMLDivElement>,
   }));
 
-  const handleMouseMove = (
-    event: React.MouseEvent<HTMLDivElement, MouseEvent>
-  ) => {
-    if (cardContainerRef.current)
-      for (const card of cardContainerRef.current
-        .children as HTMLCollectionOf<HTMLElement>) {
-        const rect = card?.getBoundingClientRect();
-
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-
-        card?.style.setProperty('--mouse-x', `${x}px`);
-        card?.style.setProperty('--mouse-y', `${y}px`);
-
-        const borderDiv = card?.children[0] as HTMLElement;
-        borderDiv.style.setProperty('opacity', '1');
-      }
-  };
-
   return (
-    <section id='projects' className={s.root} ref={reference}>
+    <motion.section
+      id='projects'
+      className={s.root}
+      ref={reference}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: SECTION_DELAY }}
+    >
       <h1 className={s.heading}>01.</h1>
       <div className={s.content}>
         <div
           className={s.cardContainer}
           ref={cardContainerRef}
-          onMouseMove={(event) => handleMouseMove(event)}
+          onMouseMove={(event) => handleMouseMove(event, cardContainerRef)}
         >
           {projects.map((project) => (
             <Card
@@ -54,6 +45,6 @@ export const Projects = ({ reference }: ProjectsProps) => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

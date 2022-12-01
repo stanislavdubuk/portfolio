@@ -1,14 +1,15 @@
 import * as React from 'react';
+import { motion } from 'framer-motion';
 
 import { Svg } from '../ui/Svg';
 import { Button } from '../ui/Button';
 
 import { scroll } from '../../lib/utils';
 import { EButtonSizes, ESections } from '../../lib/enums';
-
-import s from './Header.module.scss';
 import { Navigation } from '../Navigation';
 import { MobileNavigation } from '../MobileNavigation';
+
+import s from './Header.module.scss';
 
 export const Header = () => {
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -17,7 +18,13 @@ export const Header = () => {
 
   const handleToggleMenu = () => setShowMobileMenu(!showMobileMenu);
   return (
-    <header className={s.root}>
+    <motion.header
+      className={s.root}
+      initial={{ translateY: -100 }}
+      whileInView={{ translateY: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 2 }}
+    >
       <nav className={s.nav}>
         <Svg
           className={s.icon}
@@ -41,6 +48,6 @@ export const Header = () => {
         setShowMobileMenu={setShowMobileMenu}
         handleScroll={handleScroll}
       />
-    </header>
+    </motion.header>
   );
 };

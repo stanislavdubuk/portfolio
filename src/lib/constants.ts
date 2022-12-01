@@ -56,3 +56,5 @@ export const DEFAULT_FORM_QUERY = {
   email: '',
   message: '',
 };
+
+export const SECTION_DELAY = 0.4;

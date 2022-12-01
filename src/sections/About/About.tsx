@@ -1,5 +1,8 @@
 import * as React from 'react';
+import { motion } from 'framer-motion';
+
 import { Svg } from '../../components/ui/Svg';
+import { SECTION_DELAY } from '../../lib/constants';
 
 import s from './About.module.scss';
 
@@ -9,7 +12,15 @@ interface AboutProps {
 
 export const About = ({ reference }: AboutProps) => {
   return (
-    <section id='about' className={s.root} ref={reference}>
+    <motion.section
+      id='about'
+      className={s.root}
+      ref={reference}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: SECTION_DELAY }}
+    >
       <h1 className={s.heading}>02.</h1>
       <div className={s.content}>
         <p className={s.about}>
@@ -37,6 +48,6 @@ export const About = ({ reference }: AboutProps) => {
           <Svg className={s.icon} src='react' />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

@@ -1,9 +1,10 @@
 import * as React from 'react';
+import { motion } from 'framer-motion';
 
 import { Svg } from '../../components/ui/Svg';
 import { Form } from '../../components/Form';
 
-import { EMAIL } from '../../lib/constants';
+import { EMAIL, SECTION_DELAY } from '../../lib/constants';
 
 import s from './Contact.module.scss';
 
@@ -13,7 +14,15 @@ interface ContactProps {
 
 export const Contact = ({ reference }: ContactProps) => {
   return (
-    <section id='contact' className={s.root} ref={reference}>
+    <motion.section
+      id='contact'
+      className={s.root}
+      ref={reference}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: SECTION_DELAY }}
+    >
       <h1 className={s.heading}>03.</h1>
       <div className={s.content}>
         <h2>Let's Get In Touch</h2>
@@ -38,6 +47,6 @@ export const Contact = ({ reference }: ContactProps) => {
           <Form />
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };

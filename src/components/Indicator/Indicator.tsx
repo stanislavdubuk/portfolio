@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { motion } from 'framer-motion';
 
 import { ESections } from '../../lib/enums';
 
@@ -38,10 +39,16 @@ export const Indicator = ({
   };
 
   return (
-    <div className={s.root}>
+    <motion.div
+      className={s.root}
+      initial={{ bottom: 0, opacity: 0 }}
+      whileInView={{ bottom: 10, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 2 }}
+    >
       <div className={s.container}>
         <div className={s.item} style={getStyles()}></div>
       </div>
-    </div>
+    </motion.div>
   );
 };

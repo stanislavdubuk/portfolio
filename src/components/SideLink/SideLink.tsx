@@ -1,10 +1,11 @@
 import * as React from 'react';
+import { motion } from 'framer-motion';
 import cn from 'classnames';
 
 import { Svg } from '../ui/Svg';
+import { EMAIL } from '../../lib/constants';
 
 import s from './SideLink.module.scss';
-import { EMAIL } from '../../lib/constants';
 
 interface SideLinkProps {
   side: 'left' | 'right';
@@ -27,7 +28,13 @@ export const SideLink = ({ side }: SideLinkProps) => {
 
   if (side === 'left')
     return (
-      <div className={cn(s.root, s.left)}>
+      <motion.div
+        className={cn(s.root, s.left)}
+        initial={{ left: 0, opacity: 0 }}
+        whileInView={{ left: 50, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: 2 }}
+      >
         <div className={s.container}>
           <a
             href='https://github.com/stanislavdubuk'
@@ -52,11 +59,17 @@ export const SideLink = ({ side }: SideLinkProps) => {
             height={20}
           />
         </div>
-      </div>
+      </motion.div>
     );
 
   return (
-    <div className={cn(s.root, s.right)}>
+    <motion.div
+      className={cn(s.root, s.right)}
+      initial={{ right: 0, opacity: 0 }}
+      whileInView={{ right: 50, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 2 }}
+    >
       <div className={s.container}>
         <Svg
           className={cn(s.clipboard, { [s.copied]: copied })}
@@ -68,6 +81,6 @@ export const SideLink = ({ side }: SideLinkProps) => {
           {EMAIL}
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };

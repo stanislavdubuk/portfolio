@@ -24,6 +24,8 @@ export const Form = () => {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -32,7 +34,7 @@ export const Form = () => {
       .then(() => setMessageSent(true))
       .catch((error) => alert(error));
 
-    e.preventDefault();
+    setFormData(DEFAULT_FORM_QUERY);
   };
 
   React.useEffect(() => {
