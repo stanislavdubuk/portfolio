@@ -32,7 +32,7 @@
 
   @media (max-width: 767px) {
     position: absolute;
-    left: unset;
+    left: unset !important;
     right: 10px;
     z-index: 4;
   }

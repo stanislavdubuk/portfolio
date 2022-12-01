@@ -40,7 +40,7 @@ export const Contact = ({ reference }: ContactProps) => {
             </div>
             <div className={s.link}>
               <Svg className={s.icon} src='email' />
-              <span>{EMAIL}</span>
+              <a href={`mailto: ${EMAIL}`}>{EMAIL}</a>
             </div>
           </div>
 
