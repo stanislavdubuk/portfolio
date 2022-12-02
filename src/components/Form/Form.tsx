@@ -46,6 +46,7 @@ export const Form = () => {
   const { name, email, message } = formData;
   return (
     <form
+      data-netlify='true'
       className={s.root}
       onSubmit={(e) => handleSubmit(e)}
       autoComplete='off'

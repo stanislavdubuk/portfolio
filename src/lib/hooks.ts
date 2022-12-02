@@ -11,7 +11,7 @@ export const useIntersection = <Element extends HTMLElement>(): [
         ([entry]) => {
           setIntersecting(entry.isIntersecting);
         },
-        { rootMargin: '-400px' }
+        { rootMargin: '-200px' }
       ),
     [setIntersecting]
   );
