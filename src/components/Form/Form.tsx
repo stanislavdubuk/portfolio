@@ -2,7 +2,7 @@ import * as React from 'react';
 
 import { Button } from '../ui/Button';
 
-import { encode } from '../../lib/utils';
+// import { encode } from '../../lib/utils';
 import { EButtonSizes } from '../../lib/enums';
 import { DEFAULT_FORM_QUERY } from '../../lib/constants';
 
