@@ -1,6 +1,8 @@
 import * as React from 'react';
+import cn from 'classnames';
 
 import { Button } from '../ui/Button';
+import { Svg } from '../ui/Svg';
 
 import { encode } from '../../lib/utils';
 import { EButtonSizes } from '../../lib/enums';
@@ -82,8 +84,13 @@ export const Form = () => {
           onChange={(e) => handleChange(e)}
         />
       </div>
+
       <Button type='submit' className={s.button} size={EButtonSizes.Large}>
         Send message
+        <Svg
+          className={cn(s.icon, { [s.showIcon]: messageSent })}
+          src='checkmark'
+        />
       </Button>
     </form>
   );

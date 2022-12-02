@@ -50,7 +50,28 @@
 }
 
 .button {
+  position: relative;
+
   @media (max-width: 830px) {
     margin: 0 auto;
   }
+}
+
+.icon {
+  visibility: hidden;
+  opacity: 0;
+
+  position: absolute;
+  top: 12px;
+  right: -42px;
+
+  width: 32px;
+  height: 32px;
+
+  transition: all 0.2s ease-in-out;
+}
+
+.showIcon {
+  visibility: visible;
+  opacity: 1;
 }
