@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { motion } from 'framer-motion';
+import { isMobile } from 'react-device-detect';
 
 import { Svg } from '../ui/Svg';
 import { Button } from '../ui/Button';
@@ -17,10 +18,13 @@ export const Header = () => {
   const handleScroll = (sectionId: ESections) => scroll(sectionId);
 
   const handleToggleMenu = () => setShowMobileMenu(!showMobileMenu);
+
+  const headerInitialPosition = isMobile ? -60 : -100;
+
   return (
     <motion.header
       className={s.root}
-      initial={{ translateY: -100 }}
+      initial={{ translateY: headerInitialPosition }}
       whileInView={{ translateY: 0 }}
       viewport={{ once: true }}
       transition={{ delay: 2 }}
@@ -29,8 +33,6 @@ export const Header = () => {
         <Svg
           className={s.icon}
           src='logo'
-          width={60}
-          height={60}
           onClick={() => handleScroll(ESections.Hero)}
         />
 
