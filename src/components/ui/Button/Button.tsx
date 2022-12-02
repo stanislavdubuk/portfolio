@@ -11,6 +11,7 @@ interface ButtonProps {
   className?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
   size?: EButtonSizes;
+  type?: 'button' | 'submit' | 'reset';
   motionOptions?: {
     initialOpacity?: number;
     transform?: string;
@@ -27,6 +28,7 @@ export const Button = ({
   className,
   onClick,
   size,
+  type,
   motionOptions,
 }: ButtonProps) => {
   if (motionOptions) {
@@ -48,6 +50,7 @@ export const Button = ({
 
   return (
     <button
+      type={type}
       className={cn(s.root, className, s[`size_${size}`])}
       onClick={onClick}
     >

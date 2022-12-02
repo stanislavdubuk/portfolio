@@ -48,9 +48,11 @@ export const Form = () => {
     <form
       data-netlify='true'
       className={s.root}
-      onSubmit={(e) => handleSubmit(e)}
+      method='post'
       autoComplete='off'
+      name='contact'
     >
+      <input type='hidden' name='form-name' value='contact' />
       <div className={s.input}>
         <label>Name</label>
         <input
@@ -79,7 +81,7 @@ export const Form = () => {
           onChange={(e) => handleChange(e)}
         />
       </div>
-      <Button className={s.button} size={EButtonSizes.Large}>
+      <Button type='submit' className={s.button} size={EButtonSizes.Large}>
         Send message
       </Button>
     </form>
