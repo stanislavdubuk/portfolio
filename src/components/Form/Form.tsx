@@ -23,19 +23,19 @@ export const Form = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
 
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', ...formData }),
-    })
-      .then(() => setMessageSent(true))
-      .catch((error) => alert(error));
+  //   fetch('/', {
+  //     method: 'POST',
+  //     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+  //     body: encode({ 'form-name': 'contact', ...formData }),
+  //   })
+  //     .then(() => setMessageSent(true))
+  //     .catch((error) => alert(error));
 
-    setFormData(DEFAULT_FORM_QUERY);
-  };
+  //   setFormData(DEFAULT_FORM_QUERY);
+  // };
 
   React.useEffect(() => {
     setTimeout(() => {
