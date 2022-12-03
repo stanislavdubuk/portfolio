@@ -1,6 +1,8 @@
 import * as React from 'react';
 import cn from 'classnames';
 
+import { Svg } from '../ui/Svg';
+
 import { ESections } from '../../lib/enums';
 
 import s from './MobileNavigation.module.scss';
@@ -36,6 +38,12 @@ export const MobileNavigation = ({
 
   return (
     <div className={cn(s.root, { [s.active]: showMobileNavigation })}>
+      <Svg
+        src='close'
+        className={s.close}
+        onClick={() => setShowMobileMenu(false)}
+      />
+
       <div
         className={s.item}
         onClick={() => handleLinkClick(ESections.Projects)}

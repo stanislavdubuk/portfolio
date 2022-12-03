@@ -1,5 +1,6 @@
 .root {
-  position: fixed;
+  position: absolute;
+  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
@@ -9,7 +10,7 @@
   justify-content: space-between;
   flex-direction: column;
 
-  height: calc(100vh - var(--nav-height));
+  height: 100vh;
 
   padding: 30vh 0;
 
@@ -38,4 +39,14 @@
 .number {
   margin-right: 6px;
   color: var(--blue-main);
+}
+
+.close {
+  position: absolute;
+
+  top: 12px;
+  left: 12px;
+
+  width: 40px;
+  height: 40px;
 }
