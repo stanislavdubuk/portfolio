@@ -17,7 +17,6 @@
 
     @media (max-width: 470px) {
       font-size: 16px;
-      margin-bottom: 12px;
     }
   }
 
@@ -47,6 +46,8 @@
 
     @media (max-width: 470px) {
       font-size: 16px;
+
+      margin: 12px 0;
     }
   }
 }
@@ -57,6 +58,6 @@
   @media (max-width: 470px) {
     margin-top: 12px;
 
-    margin-bottom: 80px;
+    margin-bottom: 120px;
   }
 }
