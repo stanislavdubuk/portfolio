@@ -22,7 +22,7 @@ export const PROJECTS: TProject[] = [
   {
     id: 3,
     title: 'Personal Portfolio',
-    description: 'Second version of my personal portfolio',
+    description: 'Second version of my personal portfolio.',
     stack: ['React', 'TS', 'SASS'],
     link: 'https://github.com/stanislavdubuk/portfolio',
     live: '',
@@ -31,7 +31,7 @@ export const PROJECTS: TProject[] = [
   {
     id: 4,
     title: 'Rock Paper Scissors',
-    description: 'Simple game made with React',
+    description: 'Simple and interesting hand game.',
     stack: ['React', 'TS', 'Redux Toolkit'],
     link: 'https://github.com/stanislavdubuk/rock-paper-scissors',
     live: 'https://rock-paper-scissors-st.netlify.app/',
