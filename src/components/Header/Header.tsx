@@ -38,9 +38,11 @@ export const Header = () => {
 
         <Navigation handleScroll={handleScroll} />
 
-        <Button className={s.resume} size={EButtonSizes.Medium}>
-          Resume
-        </Button>
+        <a href='/Resume.pdf' download={true}>
+          <Button className={s.resume} size={EButtonSizes.Medium}>
+            Resume
+          </Button>
+        </a>
         <div className={s.burger} onClick={handleToggleMenu}>
           <Svg className={s.icon} src='menu' width={40} height={40} />
         </div>
