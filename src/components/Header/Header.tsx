@@ -38,7 +38,7 @@ export const Header = () => {
 
         <Navigation handleScroll={handleScroll} />
 
-        <a href='/Resume.pdf' download={true}>
+        <a href='/resume.pdf' download={true}>
           <Button className={s.resume} size={EButtonSizes.Medium}>
             Resume
           </Button>
